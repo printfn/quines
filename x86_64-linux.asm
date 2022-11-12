@@ -20,12 +20,12 @@ putchar:~\
     ret~\
 ~\
 printer:~\
-    push    rbp~\
+    push rbp~\
     push r8~\
     push r9~\
     push r10~\
-    mov     rbp, rsp~\
-    mov     [rbp-4], edi~\
+    mov rbp, rsp~\
+    mov [rbp-4], edi~\
     ~\
     mov r8, msg~\
     mov r10, [rbp-4]~\
@@ -101,12 +101,12 @@ putchar:
     ret
 
 printer:
-    push    rbp
+    push rbp
     push r8
     push r9
     push r10
-    mov     rbp, rsp
-    mov     [rbp-4], edi
+    mov rbp, rsp
+    mov [rbp-4], edi
     
     mov r8, msg
     mov r10, [rbp-4]
