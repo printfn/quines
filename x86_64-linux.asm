@@ -2,7 +2,7 @@ section .data
 msg: DB 'section .data~\
 msg: DB `, 0~\
 ~\
-global start~\
+global _start~\
 ~\
 section .text~\
 ~\
@@ -26,7 +26,7 @@ printer:~\
     push r10~\
     mov rbp, rsp~\
     mov [rbp-4], edi~\
-    ~\
+~\
     mov r8, msg~\
     mov r10, [rbp-4]~\
     cmp r10, 0~\
@@ -74,7 +74,7 @@ printer:~\
     call putchar~\
     jmp incr~\
 ~\
-start:~\
+_start:~\
     mov edi, 1~\
     call printer~\
     mov rax, 60~\
@@ -83,7 +83,7 @@ start:~\
     ret~\
 ', 0
 
-global start
+global _start
 
 section .text
 
@@ -107,7 +107,7 @@ printer:
     push r10
     mov rbp, rsp
     mov [rbp-4], edi
-    
+
     mov r8, msg
     mov r10, [rbp-4]
     cmp r10, 0
@@ -155,7 +155,7 @@ printer:
     call putchar
     jmp incr
 
-start:
+_start:
     mov edi, 1
     call printer
     mov rax, 60
